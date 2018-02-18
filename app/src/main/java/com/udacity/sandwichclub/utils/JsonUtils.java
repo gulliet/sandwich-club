@@ -45,6 +45,10 @@ public class JsonUtils {
                 alsoKnownAs.add(name);
             }
 
+            // Get the place from where the sandwich was invented
+            String placeOfOrigin = sandwichJSON.getString("placeOfOrigin");
+            Log.d(TAG, "Place of origin: " + placeOfOrigin);
+
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e(TAG, "Parsed JSON string: " + json);
