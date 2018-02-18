@@ -24,6 +24,9 @@ public class JsonUtils {
 
         try {
             JSONObject sandwichJSON = new JSONObject(json);
+            JSONObject nameJSON = sandwichJSON.getJSONObject("name");
+            String mainName = nameJSON.getString("mainName");
+
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
