@@ -33,7 +33,7 @@ public class JsonUtils {
     public static Sandwich parseSandwichJson(String json) {
 
         // Sandwich object to be return
-        Sandwich parsedSandwich = null;
+        Sandwich parsedSandwich;
 
         if (json == null || json.isEmpty()) {
             // Nothing to do in that case
