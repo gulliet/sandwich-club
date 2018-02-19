@@ -53,6 +53,10 @@ public class JsonUtils {
             String description = sandwichJSON.getString("description");
             Log.d(TAG, "Description: " + description);
 
+            // Get image's url
+            String image = sandwichJSON.getString("image");
+            Log.d(TAG, "Image: " + image);
+
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e(TAG, "Parsed JSON string: " + json);
