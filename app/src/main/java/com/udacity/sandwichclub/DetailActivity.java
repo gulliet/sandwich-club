@@ -11,6 +11,8 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
+import java.util.List;
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
@@ -71,8 +73,26 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
 
+        /*
+         * Use an efficient way to build a String from a List<> as
+         * described in the following StackOverflow post:
+         * https://stackoverflow.com/questions/599161/best-way-to-convert-an-arraylist-to-a-string
+         * (retrieved on February, Monday 19th, 2018)
+         */
+        List<String> alsoKnownAsStrings = sandwich.getAlsoKnownAs();
+        if (!alsoKnownAsStrings.isEmpty()) {
+            StringBuilder alsoKnownAsStringBuilder = new StringBuilder();
+            for (String alsoKnowAs : alsoKnownAsStrings) {
+                alsoKnownAsStringBuilder.append(alsoKnowAs);
+                alsoKnownAsStringBuilder.append("\n");
+            }
+            mAlsoKnownAsTextView.setText(alsoKnownAsStringBuilder.toString());
+        }
 
-        mPlaceOfOriginTextView.setText(sandwich.getPlaceOfOrigin());
-        mDescriptionTextView.setText(sandwich.getDescription());
+        String placeOfOrigin = sandwich.getPlaceOfOrigin();
+        mPlaceOfOriginTextView.setText(placeOfOrigin);
+
+        String description = sandwich.getDescription();
+        mDescriptionTextView.setText(description);
     }
 }
