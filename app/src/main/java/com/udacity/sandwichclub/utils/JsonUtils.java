@@ -36,12 +36,14 @@ public class JsonUtils {
             // The name object holds the regular name and a list of other names
             JSONObject nameJSON = sandwichJSON.getJSONObject("name");
             String mainName = nameJSON.getString("mainName");
+            Log.d(TAG, "Sandwich: " + mainName);
 
             // Get the list of alternate names
             JSONArray alsoKnownAsJSON = nameJSON.getJSONArray("alsoKnownAs");
             List<String> alsoKnownAs = new ArrayList<String>();
             for (int i = 0; i < alsoKnownAsJSON.length(); i++) {
                 String name = alsoKnownAsJSON.getString(i);
+                Log.d(TAG, "Other name #" + i + ": " + name);
                 alsoKnownAs.add(name);
             }
 
@@ -56,6 +58,15 @@ public class JsonUtils {
             // Get image's url
             String image = sandwichJSON.getString("image");
             Log.d(TAG, "Image: " + image);
+
+            // Get the list of ingredients
+            JSONArray ingredientsJSON = sandwichJSON.getJSONArray("ingredients");
+            List<String> ingredients = new ArrayList<String>();
+            for (int i = 0; i < ingredientsJSON.length(); i++) {
+                String ingredient = ingredientsJSON.getString(i);
+                Log.d(TAG, "Ingredient #" + i + ": " + ingredient);
+                ingredients.add(ingredient);
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
