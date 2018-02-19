@@ -49,6 +49,10 @@ public class JsonUtils {
             String placeOfOrigin = sandwichJSON.getString("placeOfOrigin");
             Log.d(TAG, "Place of origin: " + placeOfOrigin);
 
+            // Get sandwich description
+            String description = sandwichJSON.getString("description");
+            Log.d(TAG, "Description: " + description);
+
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e(TAG, "Parsed JSON string: " + json);
