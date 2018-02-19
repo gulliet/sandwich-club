@@ -33,7 +33,7 @@ public class JsonUtils {
     public static Sandwich parseSandwichJson(String json) {
 
         // Sandwich object to be return
-        Sandwich parsedSandwich = null;
+        Sandwich parsedSandwich;
 
         if (json == null || json.isEmpty()) {
             // Nothing to do in that case
@@ -55,7 +55,7 @@ public class JsonUtils {
 
             // Get the list of alternate names
             JSONArray alsoKnownAsJSON = nameJSON.getJSONArray("alsoKnownAs");
-            List<String> alsoKnownAs = new ArrayList<String>();
+            List<String> alsoKnownAs = new ArrayList<>();
             for (int i = 0; i < alsoKnownAsJSON.length(); i++) {
                 String name = alsoKnownAsJSON.getString(i);
                 Log.d(TAG, "Other name #" + i + ": " + name);
@@ -76,7 +76,7 @@ public class JsonUtils {
 
             // Get the list of ingredients
             JSONArray ingredientsJSON = sandwichJSON.getJSONArray("ingredients");
-            List<String> ingredients = new ArrayList<String>();
+            List<String> ingredients = new ArrayList<>();
             for (int i = 0; i < ingredientsJSON.length(); i++) {
                 String ingredient = ingredientsJSON.getString(i);
                 Log.d(TAG, "Ingredient #" + i + ": " + ingredient);

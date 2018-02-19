@@ -19,10 +19,10 @@ public class DetailActivity extends AppCompatActivity {
     private static final int DEFAULT_POSITION = -1;
 
     // Member variables holding references to the UI widgets
-    TextView mAlsoKnownAsTextView;
-    TextView mPlaceOfOriginTextView;
-    TextView mDescriptionTextView;
-    TextView mIngredientsTextView;
+    private TextView mAlsoKnownAsTextView;
+    private TextView mPlaceOfOriginTextView;
+    private TextView mDescriptionTextView;
+    private TextView mIngredientsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
