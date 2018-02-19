@@ -73,6 +73,10 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
 
+        // Display the names vertically stacked by building
+        // a simple String that contains a new line character
+        // after each name.
+
         /*
          * Use an efficient way to build a String from a List<> as
          * described in the following StackOverflow post:
@@ -94,5 +98,25 @@ public class DetailActivity extends AppCompatActivity {
 
         String description = sandwich.getDescription();
         mDescriptionTextView.setText(description);
+
+        // Display the ingredients vertically stacked by building
+        // a simple String that contains a new line character
+        // after each ingredient.
+
+        /*
+         * Use an efficient way to build a String from a List<> as
+         * described in the following StackOverflow post:
+         * https://stackoverflow.com/questions/599161/best-way-to-convert-an-arraylist-to-a-string
+         * (retrieved on February, Monday 19th, 2018)
+         */
+        List<String> ingredientStrings = sandwich.getIngredients();
+        if (!ingredientStrings.isEmpty()) {
+            StringBuilder ingredientStringBuilder = new StringBuilder();
+            for (String ingredient : ingredientStrings) {
+                ingredientStringBuilder.append(ingredient);
+                ingredientStringBuilder.append("\n");
+            }
+            mIngredientsTextView.setText(ingredientStringBuilder.toString());
+        }
     }
 }
