@@ -27,6 +27,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        // Get the reference to the widgets
+        mAlsoKnownAsTextView = findViewById(R.id.also_known_tv);
+        mPlaceOfOriginTextView = findViewById(R.id.origin_tv);
+        mDescriptionTextView = findViewById(R.id.description_tv);
+        mIngredientsTextView = findViewById(R.id.ingredients_tv);
+
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
         Intent intent = getIntent();
