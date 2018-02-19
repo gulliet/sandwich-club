@@ -15,6 +15,21 @@ public class JsonUtils {
 
     private static final String TAG = "JsonUtils";
 
+    /**
+     * This method parses a JSON string that hold a serialized sandwich object.
+     * If the parsing process is successful, then it returns a sandwich object,
+     * otherwise it returns null.
+     *
+     * Remark: we choose to implement the List<Sting> interface as an ArrayList<>,
+     * and thus for both the list of sandwich's other names and the list
+     * of ingredients.
+     *
+     * @param json JSON string representation of a sandwich object
+     *
+     * @return A full fledged sandwich object upon successful completion, null otherwise
+     *
+     */
+
     public static Sandwich parseSandwichJson(String json) {
 
         // Sandwich object to be return
