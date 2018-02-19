@@ -68,6 +68,15 @@ public class JsonUtils {
                 ingredients.add(ingredient);
             }
 
+            // Parsing was successful so we can build a sandwich
+            parsedSandwich =
+                    new Sandwich(mainName,
+                            alsoKnownAs,
+                            placeOfOrigin,
+                            description,
+                            image,
+                            ingredients);
+
         } catch (JSONException e) {
             e.printStackTrace();
             Log.e(TAG, "Parsed JSON string: " + json);
